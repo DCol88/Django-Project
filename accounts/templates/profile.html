@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load gravatar %}
+{% block content %}
+    <img src="{% gravatar_url user.email 150 %}" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
+    <h2>Success!</h2>
+    <p>You are logged in as {{ user.email }} </p>
+{% endblock %}
