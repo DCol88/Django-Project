@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from accounts.forms import UserLoginForm
+from accounts.forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 
 
@@ -56,3 +56,19 @@ def register(request):
 
             user = auth.authenticate(username=request.POST.get('username'),
             password=request.POST.get('password1'))
+
+            if user:
+                auth.login(request, user)
+                messages.success(request, "You have succesfully registered")
+                return redirect(reverse('profile'))
+
+            else:
+                messages.error(request, "Unable to log you in at this time!")
+
+    else:
+        form = UserRegistrationForm()
+
+    args = {'form': form}
+    args.update(csrf(request))
+
+    return render(request, 'register.html', args)
