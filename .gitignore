@@ -1,0 +1,5 @@
+env.sh
+*.sqlite3
+.vscode
+__pycache__
+media
