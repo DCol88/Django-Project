@@ -20,10 +20,22 @@ from django.views import static
 from accounts import urls as accounts_urls
 from accounts import reset_urls as reset_urls
 
+from products import urls as products_urls
+from products import views as product_views
+
+from payments import urls as payments_urls
+from cart import url as cart_urls
+from cart import views as cart_views
+from .settings import MEDIA_ROOT
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='index'),
     url(r'accounts/', include(accounts_urls)),
-    url(r'user/', include(reset_urls))
+    url(r'user/', include(reset_urls)),
+    url(r'^products/', include(products_urls)),
+    url(r'^payments/', include(payments_urls)),
+    url(r'^cart/', include(cart_urls)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
