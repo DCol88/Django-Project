@@ -22,6 +22,7 @@ from accounts import reset_urls as reset_urls
 
 from products import urls as products_urls
 from products import views as product_views
+from categories import url as categories_urls
 
 from payments import urls as payments_urls
 from cart import url as cart_urls
@@ -38,4 +39,5 @@ urlpatterns = [
     url(r'^payments/', include(payments_urls)),
     url(r'^cart/', include(cart_urls)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
+    url(r'^categories/', include(categories_urls))
 ]
