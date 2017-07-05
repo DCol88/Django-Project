@@ -14,7 +14,7 @@ def get_category(request, id):
     this_category = get_object_or_404(Category, pk=id)
 
     crumbs = []
-
+#Code for breadcrumb functionality
     crumb = this_category
     while crumb != None:
         crumbs.insert(0, crumb)
