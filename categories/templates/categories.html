@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
 {% block sidebar %}
     {% for category in categories %}
@@ -22,18 +22,18 @@
 
     <table class="table table-striped">
         <thead>
-        <tr>
+       {% comment %} <tr>
             <th>Image</th>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
             <th>Buy</th>
             <th>Cart</th>
-        </tr>
+        </tr>{% endcomment %}
         </thead>
         <tbody>
         {% for product in products %}
-            <tr>
+          {% comment %}  <tr>
                 <td><img height="100" width="100" src="{{ MEDIA_URL }}{{ product.image }}"></td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
@@ -49,6 +49,48 @@
                     </form>
                 </td>
             </tr>
+{% endcomment %}
+        
+        <div class="col-md-3 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img src="{{ MEDIA_URL }}{{ product.image }}" alt="" class="pro-image-front">
+										<img src="{{ MEDIA_URL }}{{ product.image }}" alt="" class="pro-image-back">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href="single.html" class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+											
+									</div>
+									<div class="item-info-product ">
+										<h4><a href="single.html">{{ product.name }}</a></h4>
+										<div class="info-product-price">
+											<span class="item_price">{{ product.price }}</span>
+											<del>$159.71</del>
+										</div>
+										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+															<form action="{% url 'add_to_cart' product.id %}" method="post">
+                                                                 {% csrf_token %}
+																<fieldset>
+																	<input type="hidden" name="cmd" value="_cart" />
+																	<input type="hidden" name="add" value="1" />
+																	<input type="hidden" name="business" value=" " />
+																	<input type="hidden" name="item_name" value="{{ product.name }}" />
+																	<input type="hidden" name="amount" value="{{ product.price }}" />
+																	<input type="hidden" name="discount_amount" value="1.00" />
+																	<input type="hidden" name="currency_code" value="USD" />
+																	<input type="hidden" name="return" value=" " />
+																	<input type="hidden" name="cancel_return" value=" " />
+																	<input type="submit" name="submit" value="Add to cart" class="button" />
+																</fieldset>
+															</form>
+														</div>
+																			
+									</div>
+								</div>
+							</div>
         {% endfor %}
         </tbody>
     </table>

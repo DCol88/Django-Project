@@ -1,21 +1,62 @@
-{% extends "base.html" %}
-{% load bootstrap_tags %}
-{% block content %}
+{% extends "base1.html" %} 
+{% load bootstrap_tags %} 
+{% block head_js %}
+<script src="static/js/jquery.backstretch.min.js"></script>
+<script src="static/js/scripts.js"></script>
+{% endblock %}
+{% block head_css %} 
+<link rel="stylesheet" href="static/css/form-elements.css">
+{% endblock %}
+{% block content %} 
 
-        {% if next %}
-        <form role="form" method="post" action="{% url 'login' %}?next={{ next }}">
-        {% else %}
-        <form role="form" method="post" action="{% url 'login' %}">
+{% comment %}{% if next %}
+<form role="form" method="post" action="{% url 'login' %}?next={{ next }}">
+    {% else %}
+    <form role="form" method="post" action="{% url 'login' %}">
         {% endif %}
 
-            <legend>Login</legend>
-            {% csrf_token %}
-            {{ form | as_bootstrap }}
+        <legend>Login</legend>
+        {% csrf_token %} {{ form | as_bootstrap }}
 
-            <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+        <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Login</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>{% endcomment %}
+
+    
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Login</h3>
+                   
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-lock"></i>
+                </div>
             </div>
-        </form>
-{% endblock %}
+            <div class="form-bottom">
+                {% if next %}
+                <form role="form" method="post" action="{% url 'login' %}?next={{ next }}">
+                    {% else %}
+                    <form role="form" method="post" action="{% url 'login' %}">
+                        {% endif %}
+                        {% csrf_token %}
+                        <form role="form" action="" method="post" class="login-form">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">Username</label>
+                                <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-password">Password</label>
+                                <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                            </div>
+                            <button type="submit" class="btn">Sign in!</button>
+                            <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+                        </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
