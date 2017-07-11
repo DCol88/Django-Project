@@ -557,10 +557,10 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg)  no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg)  no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg)  no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://inovaagency.com/wp-content/uploads/2015/12/cbjj4a.jpg)  no-repeat;
 	background-size:contain;	 
 }
 .carousel .item.item2{   
@@ -585,10 +585,10 @@ a.simpleCart_empty {
 	background-size:contain; 
 }  
 .carousel .item.item5{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg)  repeat ;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg)  repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg)  repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(https://s-media-cache-ak0.pinimg.com/736x/8e/23/e0/8e23e0830771d8bb92c1a1f83cfb5cd4--martial-art-pixel.jpg)  repeat;
 	background-size:contain; 
 }  
 
@@ -5762,4 +5762,58 @@ img { max-width: 100%; }
 
 .content {
 	margin-bottom: 50px;
+}
+
+/**** Register Form ***/
+
+form {
+	color: white !important;
+	align-content: center;
+}
+
+#id_username {
+	width: 50%;
+	align-content: center;
+	position: center;
+}
+
+#id_email {
+	width: 50%;
+
+}
+
+#id_password1 {
+	width: 50%;
+}
+
+#id_password2 {
+	width: 50%;
+}
+
+legend {
+	color: white;
+}
+
+/*** Blog Posts ***/
+
+#id_title {
+	width: 50%;
+}
+
+#id_content {
+	width: 50%;
+}
+
+#id_image {
+	width: 50%;
+}
+
+.post_text {
+	color: whitesmoke;
+}
+
+/*** Account Menu **/
+
+#dropdownMenuButton {
+	background-color: black;
 }

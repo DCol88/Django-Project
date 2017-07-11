@@ -18,10 +18,10 @@
                         {% if post.image %}
                         <img src="/media/{{ post.image}}">
                         {% endif %}
-                        <p>{{ post.content | linebreaks }}</p>
+                        <p class="post_text">{{ post.content | linebreaks }}</p>
                         <p><button class="btn btn-default" onclick="location.href='/blog'">Back To Blog</button></p>
                         <button class="btn btn-default" onclick="location.href='edit'">Edit</button>
-                        <p>{{ post.published_date}} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
+                        <p class="post_text">{{ post.published_date}} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
                             
                     </div>
                 </div>

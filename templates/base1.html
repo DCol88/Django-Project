@@ -42,8 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                            {% if user.is_authenticated %}
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'profile' %}">Profile</a></li>      
                             <li><a href="{% url 'logout' %}">Log Out</a></li>
                         {% else %}
                             <li><a href="{% url 'login' %}">Log In</a></li>
@@ -63,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header-bot">
         <div class="header-bot_inner_wthreeinfo_header_mid">
             <div class="col-md-4 header-middle">
-                <form action="#" method="post">
+                <form action="{% url 'products' %}" method="post">{% csrf_token %}
                     <input type="search" name="search" placeholder="Search here..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
@@ -192,7 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <li><a href="{% url 'new_post' %}">Be a Contributer</a></li>
                                     </ul>
                                 </li>
-                                <li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -278,7 +277,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{% url 'categories' %}">Videos</a></li>
                             <li><a href="about.html">Magazine</a></li>
                             <li><a href="typography.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="mailto:example@email.com">Contact</a></li>
                         </ul>
                     </div>
 
