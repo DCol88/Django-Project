@@ -1,6 +1,7 @@
 {% extends "base1.html" %}
 {% load bootstrap_tags %}
 {% block content %}
+    <div id="register-block">
     <form role="form" method="post" action="{% url 'register' %}">
         <legend>Create a new account</legend>
         {% csrf_token %}
@@ -9,4 +10,5 @@
             <button type="submit" class="btn btn-primary">Create account</button>
         </div>
     </form>
+    </div>
 {% endblock %}

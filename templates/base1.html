@@ -181,8 +181,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li class="menu__item dropdown">
                                     <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Magazine<b class="caret"></b></a>
                                     <ul class="dropdown-menu agile_short_dropdown">
-                                        <li><a href="icons.html">Web Icons</a></li>
-                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Latest Articles</a></li>
+                                        <li><a href="typography.html">Be a Contributer</a></li>
                                     </ul>
                                 </li>
                                 <li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
@@ -206,25 +206,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- header-->
 
-    <div class="row">
+   <div class="container-fluid">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 {% block sidebar %} {% endblock sidebar %}
             </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-12  col-md-12  main">
             <div class="content">
                 {% block content %} {% endblock content%}
             </div>
         </div>
-    </div>
+    {% comment %}</div>{% endcomment %}
 
     <!-- footer -->
     <div class="footer">
         <div class="footer_agile_inner_info_w3l">
             <div class="col-md-3 footer-left">
                 <h2><a href="index.html"><span>BJJ</span>Warehouse </a></h2>
-                <p>Lorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
+                <p>So I had an idea…a digital publication that’s dedicated to the entire BJJ community–not just competitors, not just one lineage, not just one country–one that speaks to everyone who trains…</p>
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                     <li>
                         <a href="#" class="facebook">
@@ -326,7 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>SIGN UP FOR THE MAGAZINE !</h3>
                 </div>
                 <div class="col-sm-6 newsright">
-                    <form action="#" method="post">
+                    <form action="#" method="post"> {% csrf_token %}
                         <input type="email" placeholder="Enter your email..." name="email" required="">
                         <input type="submit" value="Submit">
                     </form>
@@ -336,6 +336,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <p class="copy-right">&copy 2017 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
+    </div>
     </div>
     <!-- //login -->
     <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
