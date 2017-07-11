@@ -28,6 +28,7 @@ from payments import urls as payments_urls
 from cart import url as cart_urls
 from cart import views as cart_views
 from .settings import MEDIA_ROOT
+from magazine import urls as magazine_urls
 
 
 urlpatterns = [
@@ -39,5 +40,6 @@ urlpatterns = [
     url(r'^payments/', include(payments_urls)),
     url(r'^cart/', include(cart_urls)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
-    url(r'^categories/', include(categories_urls))
+    url(r'^categories/', include(categories_urls)),
+    url(r'^magazine/', include(magazine_urls))
 ]

@@ -40,15 +40,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             aria-expanded="false">
     Account
   </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                           {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Log In</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
                         </div>
-                    </div>
+                    
                 </li>
                 <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
             </ul>
+            </div>
         </div>
     </div>
     <!-- //header -->
@@ -181,8 +188,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li class="menu__item dropdown">
                                     <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Magazine<b class="caret"></b></a>
                                     <ul class="dropdown-menu agile_short_dropdown">
-                                        <li><a href="icons.html">Latest Articles</a></li>
-                                        <li><a href="typography.html">Be a Contributer</a></li>
+                                        <li><a href="{% url 'blog_posts' %}">Latest Articles</a></li>
+                                        <li><a href="{% url 'new_post' %}">Be a Contributer</a></li>
                                     </ul>
                                 </li>
                                 <li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
@@ -193,7 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="top_nav_right">
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                    <form action="#" method="post" class="last">
+                    <form action="{% url 'cart' %}" method="post" class="last">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="display" value="1">
                         <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
@@ -214,6 +221,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="col-sm-12  col-md-12  main">
             <div class="content">
+                {% if messages %}
+                        <div class="alert alert-success">
+                            <div class="messages">
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
                 {% block content %} {% endblock content%}
             </div>
         </div>
@@ -258,10 +274,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h4>Our <span>Information</span> </h4>
                         <ul>
                             <li><a href="{%url 'index' %}">Home</a></li>
-                            <li><a href="{% url 'categories' %}">Men's Wear</a></li>
-                            <li><a href="{% url 'categories' %}">Women's wear</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="typography.html">Short Codes</a></li>
+                            <li><a href="{% url 'categories' %}">Products</a></li>
+                            <li><a href="{% url 'categories' %}">Videos</a></li>
+                            <li><a href="about.html">Magazine</a></li>
+                            <li><a href="typography.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>

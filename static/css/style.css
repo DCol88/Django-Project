@@ -1629,7 +1629,7 @@ button.w3view-cart {
    margin: 10px 0;
 }
 .info-product-price span {
-    color: #000;
+    color: whitesmoke;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 1px;
@@ -5752,4 +5752,14 @@ img { max-width: 100%; }
 	width: 50%;
 	margin: 20px;
 	padding: 10px;
+}
+
+/*** Profile Window ***/
+
+.profile-text {
+	color: white;
+}
+
+.content {
+	margin-bottom: 50px;
 }
