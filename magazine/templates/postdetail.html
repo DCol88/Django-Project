@@ -22,9 +22,7 @@
                         <p><button class="btn btn-default" onclick="location.href='/blog'">Back To Blog</button></p>
                         <button class="btn btn-default" onclick="location.href='edit'">Edit</button>
                         <p>{{ post.published_date}} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
-                            {% load disqus_tags %}
-                            {% set_disqus_title post.title %}
-                            {% disqus_show_comments %}
+                            
                     </div>
                 </div>
             </div>
