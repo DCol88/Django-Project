@@ -1,11 +1,12 @@
 {% extends "base1.html" %}
 {% block content %}
 {% load bootstrap_tags %}
-    <h1>New post</h1>
+    <h1 class="post_text">New post</h1>
     <form method="POST">
     <form method="POST" enctype="multipart/form-data"> 
         {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-info">Save</button> <p><button class="btn btn-default" onclick="location.href='/blog'">Back To Blog</button></p>
+        {{ form | as_bootstrap_horizontal:'col-sm-4 col-sm-offset-8 col-md-6 col-md-offset-6 col-lg-3 col-lg-offset-9' }}
+        <button class="save" type="submit" class="btn btn-info">Save</button> 
+        <p><button id="back_to_blog" class="btn btn-default" onclick="location.href='/blog'">Back To Blog</button></p>
     </form>
 {% endblock %}

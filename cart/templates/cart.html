@@ -33,11 +33,11 @@
                 <td>{{ item.product.price }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>
-                    <form method="post" action="{% url 'adjust_cart' item.id %}">
+                    <form class="cart_form" method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
-                        Quantity
-                        <input name='quantity' type="number" min="0" max="999">
-                        <button type="submit">Adjust</button>
+                        <p class="cart_form">Quantity<p>
+                        <input class="cart_form" name='quantity' type="number" min="0" max="999">
+                        <button class="cart_form" type="submit">Adjust</button>
                     </form>
 
                 </td>
@@ -47,7 +47,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>{{ total }}</td>
+            <td id="cart_total">TOTAL ${{ total }}</td>
             <td></td>
             <td></td>
         </tr>

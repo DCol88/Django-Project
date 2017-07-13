@@ -9,12 +9,13 @@
 
 {% block content %}
 
+
     <ol class="breadcrumb">
         {% for crumb in crumbs %}
             {% if forloop.last %}
-                <li class="active">{{ crumb.name }}</li>
+                <li class="active"><h3 class="blog-title">{{ crumb.name }}</h3>     </li>
             {% else %}
-                <li><a href="{% url 'category' crumb.id %}">{{ crumb.name }}</a></li>
+                <li><a  href="{% url 'category' crumb.id %}"><h3 class="blog-title">{{ crumb.name }}</a></li>
             {% endif %}
         {% endfor %}
     </ol>
@@ -74,15 +75,8 @@
 															<form action="{% url 'add_to_cart' product.id %}" method="post">
                                                                  {% csrf_token %}
 																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="{{ product.name }}" />
-																	<input type="hidden" name="amount" value="{{ product.price }}" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
+											
+																	
 																	<input type="submit" name="submit" value="Add to cart" class="button" />
 																</fieldset>
 															</form>

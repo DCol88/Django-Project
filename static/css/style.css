@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
 	margin:0;
 	font-size: 100%;
-	background: #fff;
+	background: black;
 	font-family: 'Open Sans', sans-serif;
 }
 body a {
@@ -226,14 +226,14 @@ li.share {
     text-align: center;
 }
 .logo_agile span {
-    background: #000;
+    background: #007849;
     padding: 0 17px;
     font-weight: bold;
     color: #fff;
 }
 .logo_agile h1 a {
     font-weight: 300;
-    color: #000;
+    color: white;
     letter-spacing: 1px;
     font-size: 1.5em;
 	position:relative;
@@ -516,7 +516,12 @@ letter-spacing: 2px;
 .top_nav_right {
     float: right;
     width: 21%;
+	
+
 }
+
+
+
 .box_1 {
     background: #007849;
     padding: 15px 22px;
@@ -5745,6 +5750,10 @@ img { max-width: 100%; }
 
 }
 
+#logo {
+	color: white;
+}
+
 /******* Register Window ****/
 
 #register-block{
@@ -5761,6 +5770,8 @@ img { max-width: 100%; }
 }
 
 .content {
+	display: inline;
+	padding-top: 5px;
 	margin-bottom: 50px;
 }
 
@@ -5797,6 +5808,7 @@ legend {
 /*** Blog Posts ***/
 
 #id_title {
+
 	width: 50%;
 }
 
@@ -5809,11 +5821,74 @@ legend {
 }
 
 .post_text {
-	color: whitesmoke;
+	color: whitesmoke !important;
 }
 
 /*** Account Menu **/
 
 #dropdownMenuButton {
 	background-color: black;
+}
+
+.middle {
+	display: inline-block;
+}
+
+#cart_total {
+	font-size: 2rem;
+	color: #007849;
+}
+
+/*** Buttons ***/
+
+.save {
+	display: inline;
+	position: relative;		
+}
+
+.cart_form {
+	color: #007849;
+}
+
+#payment-form {
+
+	width: 50%;
+}
+.blog-title {
+	display: inline;
+	position: relative;
+	font-size: 2rem;
+	color: #007849;
+	text-align: left;
+
+}
+
+#read-more {
+	background-color: #007849;
+	color: white;
+}
+
+.blog-text {
+	color: white !important;
+	text-align: justify; 
+}
+
+/**** CheckOut ***/
+
+.checkout.raised {
+	box-shadow: 0 3px 0 0 #007849;
+}
+
+.checkout.raised:active, .btn-primary.raised.active {
+	background: #33a6cc;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+
+.border {
+	padding-bottom: 10px;
+	
+	height: 10px;
+	background-color: white;
 }

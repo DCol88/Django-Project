@@ -33,10 +33,10 @@ def user_cart(request):
                 except (stripe.error.CardError, e):
                     messages.error(request, "Your card was declined!")
 
-            if customer.paid:
-                messages.success(request, "You have successfully paid")
-                CartItem.objects.filter(user=request.user).delete()
-                return redirect(reverse('products'))
+                if customer.paid:
+                    messages.success(request, "You have successfully paid")
+                    CartItem.objects.filter(user=request.user).delete()
+                    return redirect(reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -58,16 +58,16 @@ def user_cart(request):
 @login_required(login_url="/accounts/login")
 def add_to_cart(request, id):
     product = get_object_or_404(Product, pk=id)
-    quantity=int(request.POST.get('quantity'))
+    
 
     try:
         cartItem = CartItem.objects.get(user=request.user, product=product)
-        cartItem.quantity += quantity
+        cartItem.quantity += 1
     except CartItem.DoesNotExist:
         cartItem = CartItem(
             user=request.user,
             product=product,
-            quantity=quantity
+            quantity=1
         )
 
     cartItem.save()

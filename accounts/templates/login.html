@@ -9,21 +9,6 @@
 {% endblock %}
 {% block content %} 
 
-{% comment %}{% if next %}
-<form role="form" method="post" action="{% url 'login' %}?next={{ next }}">
-    {% else %}
-    <form role="form" method="post" action="{% url 'login' %}">
-        {% endif %}
-
-        <legend>Login</legend>
-        {% csrf_token %} {{ form | as_bootstrap }}
-
-        <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-    </form>{% endcomment %}
 
     
     <div class="row">
@@ -46,12 +31,12 @@
                         {% csrf_token %}
                         <form role="form" action="" method="post" class="login-form">
                             <div class="form-group">
-                                <label class="sr-only" for="form-username">Username</label>
-                                <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                <label class="sr-only" for="id_username_or_email">Username</label>
+                                <input id="id_username_or_email" type="text" name="username_or_email" placeholder="Username..." class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="form-password">Password</label>
-                                <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                <label class="sr-only" for="id_password">Password</label>
+                                <input id="id_password" type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
                             </div>
                             <button type="submit" class="btn">Sign in!</button>
                             <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
