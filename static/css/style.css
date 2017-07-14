@@ -5858,14 +5858,16 @@ legend {
 	display: inline;
 	position: relative;
 	font-size: 2rem;
+	font-weight: bolder;
 	color: #007849;
 	text-align: left;
 
 }
 
-#read-more {
+.read-more {
 	background-color: #007849;
 	color: white;
+	margin: 5px 5px;
 }
 
 .blog-text {
@@ -5891,4 +5893,54 @@ legend {
 	
 	height: 10px;
 	background-color: white;
+}
+
+.page-header {
+	color: #007849;
+}
+
+.post-button {
+	width: 20rem;
+	font-size: 2rem;
+	background-color: #007849;
+	color: white;
+}
+
+#div_id_title > label {
+	margin-left:17%;
+}
+
+#div_id_content > label {
+	margin-left:17%;
+}
+
+#div_id_image > label {
+	margin-left:17%;
+}
+
+.save {
+	display: inline;
+	position: bottom;
+}
+
+.cart-box{
+	color:white;
+	font-size: 2rem;
+}
+
+/**** Account dropdown ***/
+
+.account{
+	border-right: none;
+	width: 100%;
+	background-color: black;
+	color: white;
+}
+
+.header.account > ul li {
+	border-right: none;
+}
+
+tbody > button {
+	color: black;
 }

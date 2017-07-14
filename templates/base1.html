@@ -13,7 +13,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); }
     </script>
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+
     <!--//tags -->
+    
     <link href="{% static 'css/bootstrap.css'%} " rel="stylesheet" type="text/css" media="all" />
     <link href="{% static 'css/style.css'%} " rel="stylesheet" type="text/css" media="all" />
     <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet">
@@ -27,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href=" {% static 'font-awesome/fonts/fontawesome-webfont.ttf'%}" rel="stylesheet" type="text/font" media="all"/>
     <link href=" {% static 'font-awesome/fonts/glyphicons-halflings-regular.ttf'%}" rel="stylesheet" type="text/font" media="all"/>
     <link href=" {% static 'font-awesome/fonts/glyphicons-halflings-regular.woff'%}" rel="stylesheet" type="text/font" media="all"/>
+     
 
    
         
@@ -46,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             aria-expanded="true">
     Account
   </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="dropdown-menu agile_short_dropdown account" aria-labelledby="dropdownMenuButton">
                            {% if user.is_authenticated %}
                             <li><a href="{% url 'profile' %}">Profile</a></li>      
                             <li><a href="{% url 'logout' %}">Log Out</a></li>
@@ -135,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu__list">
                                 <li class="active menu__item menu__item--current"><a class="menu__link" href="{%url 'index' %}">Home <span class="sr-only">(current)</span></a></li>
-                                <li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="{% url 'about' %}">About</a></li>
                                 <li class="dropdown menu__item">
                                     <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-column columns-3">
@@ -168,19 +172,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <div class="agile_inner_drop_nav_info">
                                             <div class="col-sm-3 multi-gd-img">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="{% url 'categories' %}">Gi</a></li>
-                                                    <li><a href="{% url 'categories' %}">No-Gi</a></li>
-                                                    <li><a href="{% url 'categories' %}">Submissions</a></li>
-                                                    <li><a href="{% url 'categories' %}">Sweeps</a></li>
+                                                    <li><a href="{% url 'video' %}">Gi</a></li>
+                                                    <li><a href="{% url 'video' %}">No-Gi</a></li>
+                                                    <li><a href="{% url 'video' %}">Submissions</a></li>
+                                                    <li><a href="{% url 'video' %}">Sweeps</a></li>
                                                     
                                                 </ul>
                                             </div>
                                             <div class="col-sm-3 multi-gd-img">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="{% url 'categories' %}">Yoga for BJJ</a></li>
-                                                    <li><a href="{% url 'categories' %}">Warm Ups</a></li>
-                                                    <li><a href="{% url 'categories' %}">Collections</a></li>
-                                                    <li><a href="{% url 'categories' %}">Post Training</a></li>
+                                                    <li><a href="{% url 'video' %}">Yoga for BJJ</a></li>
+                                                    <li><a href="{% url 'video' %}">Warm Ups</a></li>
+                                                    <li><a href="{% url 'video' %}">Collections</a></li>
+                                                    <li><a href="{% url 'video' %}">Post Training</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6 multi-gd-img multi-gd-text ">
@@ -206,8 +210,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="top_nav_right checkout">
             
                 <a href="{% url "cart" %}">
-                <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                  Checkout
+                <div class="wthreecartaits wthreecartaits2 cart cart box_1 cart-box">
+                  Checkout ..<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
                 </div>
                 </a>
@@ -365,9 +369,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //login -->
     <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
-    <!-- js -->
-    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
-    <!-- //js -->
     <script src="/static/js/modernizr.custom.js"></script>
     <!-- Custom-JavaScript-File-Links -->
     <!-- cart-js -->
@@ -451,6 +452,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!-- for bootstrap working -->
     <script type="text/javascript" src="/static/js/bootstrap.js"></script>
-    < </body>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+  
+    </body>
 
 </html>

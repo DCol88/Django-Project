@@ -1,5 +1,6 @@
 $(function() {
     $("#payment-form").submit(function() {
+      alert('click');
       var form = this;
       var card = {
         number:   $("#id_credit_card_number").val(),

@@ -14,6 +14,7 @@ import stripe
 @login_required(login_url="/accounts/login")
 def buy_now(request, id):
     if request.method == 'POST':
+        print(request.POST)
         form = MakePaymentForm(request.POST)
         if form.is_valid():
             try:

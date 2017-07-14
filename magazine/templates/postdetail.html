@@ -19,8 +19,8 @@
                         <img src="/media/{{ post.image}}">
                         {% endif %}
                         <p class="post_text blog-text">{{ post.content | linebreaks }}</p>
-                        <p><button class="btn btn-default" onclick="location.href='/magazine'">Back To Blog</button></p>
-                        <button class="btn btn-default" onclick="location.href='edit'">Edit</button>
+                        <p><button class="btn btn-default read-more" onclick="location.href='/magazine'">Back To Blog</button></p>
+                        <button class="btn btn-default read-more" onclick="location.href='edit'">Edit</button>
                         <p class="post_text">{{ post.published_date}} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
                             
                     </div>

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.views import get_index
+from home.views import get_index, get_about, get_video
 from django.views import static
 from accounts import urls as accounts_urls
 from accounts import reset_urls as reset_urls
@@ -34,6 +34,8 @@ from magazine import urls as magazine_urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='index'),
+    url(r'^about$', get_about, name='about'),
+    url(r'^videos$', get_video, name='video'),
     url(r'accounts/', include(accounts_urls)),
     url(r'user/', include(reset_urls)),
     url(r'^products/', include(products_urls)),
