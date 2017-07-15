@@ -74,7 +74,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-4 header-middle">
                 <form action="{% url 'products' %}" method="post">{% csrf_token %}
                     <input type="search" name="search" placeholder="Search here..." required="">
-                    <input type="submit" value=" ">
+                    
+                    <input id="search" type="submit" value=" ">
+                    
                     <div class="clearfix"></div>
                 </form>
             </div>
@@ -87,25 +89,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social">
                     <li class="share">Share On : </li>
                     <li>
-                        <a href="#" class="facebook">
+                        <a href="https://www.facebook.com/ECJJA/" class="facebook">
                             <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="twitter">
+                        <a href="https://twitter.com/ecjja?lang=en" class="twitter">
                             <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="instagram">
+                        <a href="https://www.instagram.com/ecjja/?hl=en" class="instagram">
                             <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="pinterest">
+                        <a href="https://www.pinterest.ie/pin/93238654766190928/" class="pinterest">
                             <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                         </a>
@@ -145,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <ul class="dropdown-menu multi-column columns-3">
                                         <div class="agile_inner_drop_nav_info">
                                             <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-                                                <a href="mens.html"><img src="http://2.bp.blogspot.com/-03vc0NUJmZg/VHeVIrAzL8I/AAAAAAAAI2o/aTgqV8wmnho/s1600/DSC_5395s.jpg" alt=" "/></a>
+                                                <a href="{% url 'category' 4 %}"><img src="http://2.bp.blogspot.com/-03vc0NUJmZg/VHeVIrAzL8I/AAAAAAAAI2o/aTgqV8wmnho/s1600/DSC_5395s.jpg" alt=" "/></a>
                                             </div>
                                             <div class="col-sm-3 multi-gd-img">
                                                 <ul class="multi-column-dropdown">
@@ -255,25 +257,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p>So I had an idea…a digital publication that’s dedicated to the entire BJJ community–not just competitors, not just one lineage, not just one country–one that speaks to everyone who trains…</p>
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                     <li>
-                        <a href="#" class="facebook">
+                        <a href="https://www.facebook.com/ECJJA/" class="facebook">
                             <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="twitter">
+                        <a href="https://twitter.com/ecjja?lang=en" class="twitter">
                             <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="instagram">
+                        <a href="https://www.instagram.com/ecjja/?hl=en" class="instagram">
                             <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="pinterest">
+                        <a href="https://www.pinterest.ie/pin/93238654766190928/" class="pinterest">
                             <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
                         </a>
@@ -288,8 +290,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="{%url 'index' %}">Home</a></li>
                             <li><a href="{% url 'categories' %}">Products</a></li>
                             <li><a href="{% url 'categories' %}">Videos</a></li>
-                            <li><a href="about.html">Magazine</a></li>
-                            <li><a href="typography.html">About</a></li>
+                            <li><a href="{% url 'blog_posts' %}">Magazine</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="mailto:example@email.com">Contact</a></li>
                         </ul>
                     </div>
@@ -334,15 +336,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-3 sign-gd flickr-post">
                         <h4>IRISH <span>GYMS</span></h4>
                         <ul>
-                            <li><a href="single.html"><img src="https://images.tapology.com/gyms/logos/4456/profile/4456-limerick-bjj-academy.jpg?1458783797" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://static-s.aa-cdn.net/img/ios/997484111/dfa5b3d12a63f77315ae823f0d0eae8d?v=1" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://pbs.twimg.com/profile_images/706148901359915010/qa4jVwS0.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://pbs.twimg.com/profile_images/378800000496206769/7f8ecba6b3938e611bcbd384600374d0.png" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://68.media.tumblr.com/avatar_efad974502d6_128.png" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple117/v4/47/e7/ba/47e7baa1-db02-f7ac-5407-92be536e78aa/source/256x256bb.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://pbs.twimg.com/profile_images/3345893428/f09fe676328726ba1306bdc31b96a115.jpeg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://pbs.twimg.com/profile_images/591674931336871936/UQ9P16oe.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="https://static1.squarespace.com/static/563a0aa2e4b0c2a50bed4f56/t/58b3f616725e252ebd7b414b/1488188972452/" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://images.tapology.com/gyms/logos/4456/profile/4456-limerick-bjj-academy.jpg?1458783797" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://static-s.aa-cdn.net/img/ios/997484111/dfa5b3d12a63f77315ae823f0d0eae8d?v=1" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://pbs.twimg.com/profile_images/706148901359915010/qa4jVwS0.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://pbs.twimg.com/profile_images/378800000496206769/7f8ecba6b3938e611bcbd384600374d0.png" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://68.media.tumblr.com/avatar_efad974502d6_128.png" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple117/v4/47/e7/ba/47e7baa1-db02-f7ac-5407-92be536e78aa/source/256x256bb.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://pbs.twimg.com/profile_images/3345893428/f09fe676328726ba1306bdc31b96a115.jpeg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://pbs.twimg.com/profile_images/591674931336871936/UQ9P16oe.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.ecjja.com"><img src="https://static1.squarespace.com/static/563a0aa2e4b0c2a50bed4f56/t/58b3f616725e252ebd7b414b/1488188972452/" alt=" " class="img-responsive" /></a></li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>

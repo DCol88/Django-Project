@@ -267,7 +267,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 	letter-spacing:1px;
 }
 .header-middle form input[type="submit"]{
-    background: url(../images/search.png) no-repeat 4px 0px #007849;
+    background: url(media/images/search.png) no-repeat 4px 0px #007849;
     width: 11%;
     height: 50px;
     border: none;
@@ -5763,6 +5763,10 @@ img { max-width: 100%; }
 	padding: 10px;
 }
 
+#div_id_username > label {
+	margin-left:25%;
+}
+
 /*** Profile Window ***/
 
 .profile-text {
@@ -5837,6 +5841,18 @@ legend {
 #cart_total {
 	font-size: 2rem;
 	color: #007849;
+	background-color: whitesmoke;
+	border: 5px #007849 solid;
+	padding-top: 10px;
+}
+
+tbody {
+	border: 5px #007849 solid;
+}
+
+td {
+	border: 5px #007849 solid;
+	font-size: 2rem;
 }
 
 /*** Buttons ***/
@@ -5848,6 +5864,7 @@ legend {
 
 .cart_form {
 	color: #007849;
+	font-size: 1.5rem;
 }
 
 #payment-form {
@@ -5906,6 +5923,8 @@ legend {
 	color: white;
 }
 
+/*** Blog form ****/
+
 #div_id_title > label {
 	margin-left:17%;
 }
@@ -5937,10 +5956,14 @@ legend {
 	color: white;
 }
 
-.header.account > ul li {
+#home > div > ul > li:nth-child(3) > div > ul > li {
 	border-right: none;
 }
 
-tbody > button {
-	color: black;
+/**** Share text ***/
+body > div.header-bot > div > div.col-md-4.agileits-social.top_content > ul > li.share {
+	color: white;
 }
+
+
+

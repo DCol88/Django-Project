@@ -2,7 +2,9 @@
 
 {% block sidebar %}
     {% for category in categories %}
+    <div>
         <li class="category-name"><a href="{% url 'category' category.id %}">{{ category.name }}</a></li>
+    </div>
     {% endfor %}
 {% endblock sidebar %}
 

@@ -4,29 +4,38 @@
 {% block content %}
 
 <article class="video">
-    <figure>
-      <a class="fancybox fancybox.iframe" href="//www.youtube.com/embed/paG__3FBLzI">
-      <img class="videoThumb" src="https://cdn2.omidoo.com/sites/default/files/imagecache/full_width/images/bydate/20130214/bm-7.jpeg"></a>
-    </figure>
-    <h2 class="videoTitle">Mesopotamia</h2>
-  </article>
-
-  <article class="video" background-color"white" height="30px">
-    <figure>
-      <a class="fancybox fancybox.iframe" href="//www.youtube.com/embed/paG__3FBLzI">
-      <img class="videoThumb" src="//i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
-    </figure>
-    <h2 class="videoTitle">Mesopotamia</h2>
-  </article>
-
-
-
-<article class="video">
-    <figure>
-      <a class="fancybox fancybox.iframe" href="//www.youtube.com/embed/paG__3FBLzI">
-      <img class="videoThumb" src="//i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
-    </figure>
-    <h2 class="videoTitle">Mesopotamia</h2>
-  </article>
-
+     <div class="row">
+           <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Buy</th>
+            <th>Cart</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><img height="100" width="100" src="{{ MEDIA_URL }}{{ product.image }}"></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td><a href="{% url 'buy_now_stripe' product.id %}" )>Buy Now</a></td>
+                {#                    <td><a href="{% url 'add_to_cart' product.id %}")>Add To Cart</a></td>#}
+                <td>
+                    <form method="post" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        Quantity
+                        <input name='quantity' type="number" min="1" max="999">
+                        <button type="submit">Add</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
 {% endblock content %}
