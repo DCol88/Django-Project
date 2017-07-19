@@ -5966,4 +5966,14 @@ body > div.header-bot > div > div.col-md-4.agileits-social.top_content > ul > li
 }
 
 
+body > div.container-fluid > div.footer.middle > div > div.col-md-3.footer-left > p {
+	color: white;
+}
 
+body > div.container-fluid > div.footer.middle > div > div.col-md-9.footer-right > div > div.col-md-4.sign-gd {
+	color: white;
+}
+
+p {
+	color: white !important;
+}
