@@ -21,6 +21,5 @@ PyNaCl==1.1.2
 pytz==2017.2
 requests==2.18.1
 six==1.10.0
-storage==0.0.4.3
 stripe==1.62.0
 urllib3==1.21.1
