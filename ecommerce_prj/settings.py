@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ['dc-bjj-warehouse.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['dc-bjj-warehouse.herokuapp.com', 'localhost', '127.0.0.1']
 INTERNAL_IPS = ['127.0.0.1']
 
 
@@ -137,26 +137,27 @@ STATICFILES_DIRS = (
    os.path.join(BASE_DIR, "static"),
 )
 
-AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'Cache-Control': 'max-age=94608000',
- }
+#AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
+    #'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    #'Cache-Control': 'max-age=94608000',
+ #}
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AWS_BUCKET_NAME = 'dc-bjj-test'
-AWS_ACCESS_KEY_ID = 'AKIAIKZNO36HSKGPEP2A'
-AWS_SECRET_ACCESS_KEY = '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'
+#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_BUCKET_NAME')
+#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
+#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_BUCKET_NAME
+#AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATIC_URL = '/static/'    #"https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+MEDIA_URL = '/media/' #"https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
