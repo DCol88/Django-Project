@@ -86,15 +86,15 @@ WSGI_APPLICATION = 'ecommerce_prj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+#DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
 
 
-# DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.sqlite3',
-#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#      }
-# }
+DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      }
+ }
 
 
 
@@ -132,37 +132,41 @@ USE_TZ = True
 
 #DISQUS_WEBSITE_SHORTNAME =  os.environ.get("DISQUS_SHORTNAME")
 
-
-STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, "static"),
-)
-
-#AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
-    #'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    #'Cache-Control': 'max-age=94608000',
- #}
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_BUCKET_NAME')
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
-#AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATIC_URL = '/static/'    #"https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = '/media/' #"https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET_KEY')
 
 DEFAULT_FROM_EMAIL = 'davecommerce@example.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+
+
+AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'Cache-Control': 'max-age=94608000',
+}
+
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+   os.path.join(BASE_DIR, "static"),
+)
+
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
