@@ -86,9 +86,11 @@ WSGI_APPLICATION = 'ecommerce_prj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# This is the Heroku Database
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
 
 
+# This is the local sqlite database. Don't need unless you want to run FULLY locally.
 # DATABASES = {
 #       'default': {
 #           'ENGINE': 'django.db.backends.sqlite3',
@@ -141,6 +143,25 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 
+# To Work Locally (e.g. local CSS)
+# 1. Uncomment the following settings, 
+
+# STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+# )
+# STATICFILES_LOCATION = 'static'
+# STATIC_URL = '/static/'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIAFILES_LOCATION = 'media'
+# MEDIA_URL = '/media/'
+
+
+# 2 Comment out all of the following AWS Settings 
+
+
+#  AWS Configuration - Uncomment when pushing to Heroku, or when running locally,
+# and wanting to collect static, etc.
 
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -170,3 +191,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+# End of AWS Settings to be commented out.
+
+
+
+#. To push to heroku again.
+#  Reverse the commenting done above.
+#  python manage.py collectstatic     (this will upload any changed css js etc to S3)
+#  git add, git commit, git push
+#  Deployment should happen automatically
+
