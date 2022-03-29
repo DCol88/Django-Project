@@ -12,7 +12,7 @@ django-storages==1.6.3
 gunicorn==19.7.1
 idna==2.5
 olefile==0.44
-paramiko==2.2.1
+paramiko==2.10.1
 Pillow==4.1.1
 psycopg2==2.7.1
 pyasn1==0.2.3
